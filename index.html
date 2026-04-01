@@ -64,13 +64,13 @@ nav {
 .nav-links a { font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--cream-dim);text-decoration:none;transition:color .2s; }
 .nav-links a:hover { color:var(--cyan); }
 .nav-btn {
-  background:var(--pink);color:#fff !important;letter-spacing:1px !important;
+  background:#28c5ef;color:#020408 !important;letter-spacing:1px !important;
   padding:9px 22px;border-radius:100px;font-family:'Nunito',sans-serif !important;
   font-size:13px !important;font-weight:800 !important;
-  box-shadow:0 0 22px rgba(255,45,120,.35);
+  box-shadow:0 0 22px rgba(40,197,239,.4);
   transition:box-shadow .2s,transform .2s !important;
 }
-.nav-btn:hover { box-shadow:0 0 40px rgba(255,45,120,.6) !important;transform:translateY(-1px) !important; }
+.nav-btn:hover { box-shadow:0 0 40px rgba(40,197,239,.65) !important;transform:translateY(-1px) !important; }
 
 /* ── HERO ── */
 .hero {
@@ -117,13 +117,13 @@ nav {
 .hero-actions { display:flex;gap:16px;align-items:center;flex-wrap:wrap; }
 .btn-solid {
   display:inline-flex;align-items:center;gap:9px;
-  background:var(--pink);color:#fff;padding:14px 30px;
+  background:#28c5ef;color:#020408;padding:14px 30px;
   border-radius:100px;font-weight:800;font-size:14.5px;
   text-decoration:none;letter-spacing:.3px;
-  box-shadow:0 0 28px rgba(255,45,120,.4),0 4px 18px rgba(0,0,0,.35);
+  box-shadow:0 0 28px rgba(40,197,239,.45),0 4px 18px rgba(0,0,0,.35);
   transition:all .25s;
 }
-.btn-solid:hover { transform:translateY(-3px);box-shadow:0 0 50px rgba(255,45,120,.6),0 8px 28px rgba(0,0,0,.4); }
+.btn-solid:hover { transform:translateY(-3px);box-shadow:0 0 50px rgba(40,197,239,.65),0 8px 28px rgba(0,0,0,.4); }
 .btn-ghost-link {
   font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2px;
   text-transform:uppercase;color:var(--cream-dim);text-decoration:none;
@@ -210,11 +210,7 @@ section { padding:96px 52px; }
 
 /* ── STORY / LETTER ── */
 .story { position:relative;overflow:hidden; }
-.story::before {
-  content:'"';position:absolute;top:-80px;left:30px;
-  font-family:'Bebas Neue',sans-serif;font-size:500px;
-  color:rgba(255,45,120,.04);line-height:1;pointer-events:none;
-}
+.story::before { content:none; }
 .story-wrap { max-width:820px;margin:0 auto;position:relative;z-index:1; }
 .story-wrap .label { justify-content:center; }
 .story-wrap .label::after,.story-wrap .label::before { content:'';flex:none;width:36px;height:1px;background:var(--pink); }
@@ -226,14 +222,14 @@ section { padding:96px 52px; }
 .story-body em { color:var(--green);font-style:italic; }
 .story-pull {
   margin:44px 0;padding:32px 36px;
-  border-left:4px solid var(--pink);
-  background:var(--pink-lo);border-radius:0 14px 14px 0;
+  border-left:4px solid var(--cyan);
+  background:var(--cyan-lo);border-radius:0 14px 14px 0;
 }
 .story-pull p {
   font-family:'Boogaloo',cursive;font-size:22px;color:var(--cream);
   line-height:1.5;margin-bottom:10px;
 }
-.story-pull cite { font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--pink);font-style:normal; }
+.story-pull cite { font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--cyan);font-style:normal; }
 .story-sign {
   margin-top:52px;padding-top:36px;border-top:1px solid var(--border);
   text-align:center;
@@ -275,11 +271,7 @@ section { padding:96px 52px; }
 
 /* ── SALK STRIPE ── */
 .salk-stripe { background:var(--pink);padding:72px 52px;position:relative;overflow:hidden; }
-.salk-stripe::before {
-  content:'"';position:absolute;top:-60px;left:28px;
-  font-family:'Bebas Neue',sans-serif;font-size:440px;
-  color:rgba(255,255,255,.05);line-height:1;pointer-events:none;
-}
+.salk-stripe::before { content:none; }
 .salk-inner { max-width:820px;margin:0 auto;text-align:center;position:relative;z-index:1; }
 .salk-q {
   font-family:'Boogaloo',cursive;
@@ -370,25 +362,16 @@ footer {
   <div class="hero-grid"></div>
   <div class="hero-left">
     <div class="eyebrow rev" style="color:var(--green)">Strategic Business Advisory</div>
-    <h1 class="hero-h1 rev" style="transition-delay:.08s">
-      Be a
-      <span class="pink">Good</span>
-      Ancestor.
+    <h1 class="hero-h1 rev" style="transition-delay:.08s;margin-bottom:28px;">
+      <span style="font-size:.62em;display:block;line-height:1">Build something that</span>
+      <span class="pink">Momma</span>
+      <span style="font-size:.62em;display:block;line-height:1.1">will be proud of.</span>
     </h1>
-    <p class="hero-tagline rev" style="transition-delay:.16s">The Industrial Involution</p>
     <p class="hero-body rev" style="transition-delay:.24s">
       Deep-rooted analytical insight. Scrupulous long-term economic planning. Unprecedented storytelling. We help organizations reach unfathomable heights — while protecting Mother Earth for every generation that follows.
     </p>
-    <div class="hero-actions rev" style="transition-delay:.32s">
-      <a href="#contact" class="btn-solid">
-        Start the Conversation
-        <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M3 7.5h9M8.5 4l3.5 3.5L8.5 11" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-      <a href="#story" class="btn-ghost-link">
-        Read the Manifesto
-        <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M3 7.5h9M8.5 4l3.5 3.5L8.5 11" stroke="rgba(242,234,220,.55)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-    </div>
+    <p class="hero-tagline rev" style="transition-delay:.32s">Welcome to The Industrial Involution!</p>
+
   </div>
   <div class="hero-right rev" style="transition-delay:.18s">
     <div class="logo-stage">
@@ -405,22 +388,18 @@ footer {
 <!-- TICKER -->
 <div class="ticker">
   <div class="ticker-belt">
-    <div class="t-item">Be a Good Ancestor</div>
-    <div class="t-item">The Industrial Involution</div>
-    <div class="t-item">Plant the Seeds of Your Dreams</div>
-    <div class="t-item">Long-Term Thinking</div>
+    <div class="t-item">Fundraising & Capital Strategy</div>
     <div class="t-item">Brand Rewilding</div>
-    <div class="t-item">Intergenerational Justice</div>
-    <div class="t-item">Cathedral Thinking</div>
-    <div class="t-item">Ego to Eco</div>
-    <div class="t-item">Be a Good Ancestor</div>
-    <div class="t-item">The Industrial Involution</div>
-    <div class="t-item">Plant the Seeds of Your Dreams</div>
-    <div class="t-item">Long-Term Thinking</div>
+    <div class="t-item">Operational Architecture</div>
+    <div class="t-item">Strategic Advisory</div>
+    <div class="t-item">Impact Positioning</div>
+    <div class="t-item">Holistic Forecasting</div>
+    <div class="t-item">Fundraising & Capital Strategy</div>
     <div class="t-item">Brand Rewilding</div>
-    <div class="t-item">Intergenerational Justice</div>
-    <div class="t-item">Cathedral Thinking</div>
-    <div class="t-item">Ego to Eco</div>
+    <div class="t-item">Operational Architecture</div>
+    <div class="t-item">Strategic Advisory</div>
+    <div class="t-item">Impact Positioning</div>
+    <div class="t-item">Holistic Forecasting</div>
   </div>
 </div>
 
@@ -496,7 +475,7 @@ footer {
       <cite>— The Industrial Involution Manifesto</cite>
     </div>
     <p class="story-body rev" style="transition-delay:.18s">
-      Not just for the sake of our own lifetime — but for all the generations that succeed us. It means extending our business' time horizons far into the future. Forgoing the greenwashing, the long-washing, our addiction to capital gains, ROIs, GDP, and shareholder values blinded by the myopic view of <em>short-termism</em>.
+      Not just for the sake of our own lifetime — but for all the generations that succeed us. It means extending our business' time horizons far into the future. Forgoing the greenwashing, the long-washing, our addiction to capital gains, ROIs, GDP, and shareholder values blinded by the myopic view of <em style="color:#fff">short-termism</em>.
     </p>
     <p class="story-body rev" style="transition-delay:.22s">
       It is time to engender a new economy with a radically different guiding purpose — one that honors both <strong>the needs of humans and the biophysical constraints of the planet</strong>. To place the pillars of deep-time humility, legacy mindset, intergenerational justice, cathedral thinking, holistic forecasting, and transcendent goal into the foundation of our commercial constitutions.
@@ -568,11 +547,10 @@ footer {
     Plant the seeds of your dreams<br>and <span>grow them</span> into your <em>reality.</em>
   </p>
   <div class="cta-btns rev" style="transition-delay:.12s">
-    <a href="/cdn-cgi/l/email-protection#3159545d5d5e715c5e5c5c5042535e48421f525e" class="btn-solid" style="background:#4fd24c;color:#020408;box-shadow:0 0 28px rgba(79,210,76,.5),0 4px 18px rgba(0,0,0,.35);">
+    <a href="./services.html" target="_blank" class="btn-solid" style="background:#4fd24c;color:#020408;box-shadow:0 0 28px rgba(79,210,76,.5),0 4px 18px rgba(0,0,0,.35);">
       Let's Work Together
       <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M3 7.5h9M8.5 4l3.5 3.5L8.5 11" stroke="#020408" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </a>
-    <a href="#manifesto" class="btn-ghost-link">Read the Manifesto</a>
   </div>
 </section>
 
