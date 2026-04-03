@@ -284,6 +284,12 @@ section { padding:96px 52px; }
 .card.gold .card-icon { background:var(--gold-lo);border-color:rgba(245,200,66,.22); }
 .card-name { font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:1.5px;color:var(--cream);margin-bottom:11px;line-height:1.1; }
 .card-desc { font-size:13.5px;line-height:1.75;color:var(--cream-dimmer);margin-bottom:22px; }
+.card.fusion { border-color:rgba(40,197,239,.28);background:linear-gradient(140deg,rgba(40,197,239,.05) 0%,rgba(255,45,120,.04) 60%,var(--ink) 100%); }
+.card.fusion::after { background:linear-gradient(90deg,var(--cyan),var(--pink)); }
+.card.fusion:hover { border-color:rgba(40,197,239,.5);box-shadow:0 18px 55px rgba(0,0,0,.45),0 0 45px rgba(40,197,239,.08),0 0 45px rgba(255,45,120,.05); }
+.card.fusion .card-icon { background:linear-gradient(135deg,rgba(40,197,239,.15),rgba(255,45,120,.12));border-color:rgba(40,197,239,.2); }
+.card-tag.fusion { color:transparent;background:linear-gradient(90deg,var(--cyan),var(--pink));-webkit-background-clip:text;background-clip:text;border-color:rgba(40,197,239,.3); }
+.card.fusion .card-name { background:linear-gradient(90deg,var(--cyan) 0%,#a78bfa 50%,var(--pink) 100%);-webkit-background-clip:text;background-clip:text;color:transparent; }
 .card-tag { display:inline-block;font-family:'DM Mono',monospace;font-size:9.5px;letter-spacing:2px;text-transform:uppercase;padding:4px 11px;border:1px solid;border-radius:100px; }
 .card-tag.green { color:var(--green);border-color:rgba(79,210,76,.35); }
 .card-tag.pink { color:var(--pink);border-color:rgba(255,45,120,.35); }
@@ -510,10 +516,14 @@ footer {
       <p class="card-desc">Your story is your most durable asset. We excavate the founding moments, the turning points, and the values that have quietly shaped every decision, then weave them into a living narrative that runs through your communications, culture, and long-term identity.</p>
       <span class="card-tag pink">Narration</span>
     </div>
+    <div class="card fusion rev" style="transition-delay:.45s">
+      <div class="card-icon">⚡</div>
+      <div class="card-name">The Alchemy</div>
+      <p class="card-desc">Most shops pick a lane. We refuse. When engineering precision and creative vision collide, the result isn't a compromise. It's a force multiplier. Systems that feel. Stories that scale. Code that carries culture. This is where we live, and there's nowhere else we'd rather be.</p>
+      <span class="card-tag fusion">Our Superpower</span>
+    </div>
   </div>
 </section>
-
-<!-- IMPACT STAT -->
 <section class="impact-stat">
   <div class="impact-inner rev">
     <div class="impact-number">$327K</div>
@@ -559,11 +569,12 @@ footer {
   </div>
   <div class="footer-mid">© 2025 Momma's Boys. Joe & Sean Leone.</div>
   <div class="footer-right">
-    <a href="mailto:dream@mommasboys.com" class="footer-email">dream@mommasboys.com</a>
+    <a href="#" class="footer-email" onclick="copyEmail(event)">dream@mommasboys.com</a>
+    <span id="email-toast" style="display:none;margin-left:8px;font-size:11px;color:#28c5ef;font-family:'DM Mono',monospace;letter-spacing:1px;">email copied</span>
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // Cursor
 const cur = document.getElementById('cur');
 const ring = document.getElementById('cur-ring');
@@ -584,13 +595,16 @@ document.addEventListener('mousemove', e=>{
 // Scroll reveal
 const obs = new IntersectionObserver((entries)=>{
   entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('on'); });
-}, {threshold:.12});
+},{threshold:0.13});
 document.querySelectorAll('.rev').forEach(el=>obs.observe(el));
 
-// Trigger hero reveals
-setTimeout(()=>{
-  document.querySelectorAll('.hero .rev').forEach(el=>el.classList.add('on'));
-},80);
-</script>
-</body>
-</html>
+// Copy email
+function copyEmail(e) {
+  e.preventDefault();
+  navigator.clipboard.writeText('dream@mommasboys.com').then(() => {
+    const toast = document.getElementById('email-toast');
+    toast.style.display = 'inline';
+    setTimeout(() => { toast.style.display = 'none'; }, 2000);
+  });
+}
+</script></body></html>
