@@ -355,7 +355,7 @@ footer {
 .footer-bname { font-family:'Boogaloo',cursive;font-size:17px;color:var(--pink); }
 .footer-btag { font-family:'DM Mono',monospace;font-size:9.5px;letter-spacing:2px;text-transform:uppercase;color:var(--green);margin-top:2px;opacity:.7; }
 .footer-mid { font-family:'DM Mono',monospace;font-size:10.5px;color:var(--cream-dimmer);letter-spacing:1px;text-align:center;flex:1; }
-.footer-right { display:flex;align-items:center;justify-content:flex-end; }
+.footer-right { display:flex;align-items:center;justify-content:flex-end;position:relative; }
 .footer-email { font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:1px;color:var(--cyan);text-decoration:none;opacity:.8;transition:opacity .2s; }
 .footer-email:hover { opacity:1; }
 
@@ -570,7 +570,7 @@ footer {
   <div class="footer-mid">© 2025 Momma's Boys. Joe & Sean Leone.</div>
   <div class="footer-right">
     <a href="#" class="footer-email" onclick="copyEmail(event)">dream@mommasboys.com</a>
-    <span id="email-toast" style="display:none;margin-left:8px;font-size:11px;color:#28c5ef;font-family:'DM Mono',monospace;letter-spacing:1px;">email copied</span>
+    <span id="email-toast" style="display:none;position:absolute;bottom:110%;right:0;font-size:11px;color:#28c5ef;font-family:'DM Mono',monospace;letter-spacing:1px;white-space:nowrap;">email copied</span>
   </div>
 </footer>
 
