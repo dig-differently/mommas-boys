@@ -83,37 +83,66 @@ body { background: #000; display: flex; justify-content: center; min-height: 100
 .footer-tagline { width: 100%; text-align: center; font-size: 11px; color: #aaa; font-style: italic; margin-top: 16px; letter-spacing: 0.06em; }
 .section-wrapper { width: 100%; }
 @media (max-width: 620px) {
-  .pg { padding: 20px 14px 48px; }
-  .lanes { grid-template-columns: 1fr; }
-  .outcomes { grid-template-columns: 1fr; }
-  .pricing-row { grid-template-columns: 1fr; }
-  .hero-row { gap: 20px; }
 
-  /* Service rows: stack name + price vertically */
-  .svc { flex-wrap: wrap; gap: 8px; padding: 14px 0; }
-  .svc-n { width: 100%; font-size: 14px; }
-  .svc-n strong { font-size: 14px; }
-  .svc-p-wrap { width: 100%; flex-direction: row; align-items: center; justify-content: flex-start; gap: 10px; }
+  /* ── Page & hero ── */
+  .pg { padding: 16px 14px 56px; }
+  .hero-row { flex-direction: column; align-items: flex-start; gap: 16px; margin-bottom: 28px; }
+  .logo-stage { width: 120px; height: 120px; }
+  .logo-stage img { width: 120px; }
+  .hero-text { padding-left: 0; }
+  .big-headline { font-size: clamp(28px, 8vw, 38px); }
+  .hero-sub { font-size: 14px; }
+
+  /* ── Lanes: stack Creative then Systems ── */
+  .lanes { grid-template-columns: 1fr; gap: 16px; }
+  .lane { padding: 20px 16px; width: 100%; box-sizing: border-box; }
+  .lane-title { font-size: 16px; white-space: normal; }
+
+  /* ── Service rows: name on top, prices below ── */
+  .svc { flex-wrap: wrap; align-items: flex-start; padding: 14px 0; gap: 6px; }
+  .svc-check { margin-top: 3px; flex-shrink: 0; }
+  .svc-n { flex: 1 1 80%; font-size: 14px; line-height: 1.4; }
+  .svc-n strong { font-size: 14px; margin-bottom: 2px; }
+  .svc-p-wrap { width: 100%; flex-direction: row; align-items: center; justify-content: flex-start; gap: 10px; padding-left: 26px; margin-top: 2px; }
   .svc-p { font-size: 13px; }
   .svc-s { font-size: 11px; }
 
-  /* Lane titles */
-  .lane-title { font-size: 15px; white-space: normal; }
-  .lane { padding: 20px 14px; }
+  /* ── Funnel arms ── */
+  .funnel-arms { flex-direction: column; gap: 0; }
+  .arm { width: 100%; height: 36px; border: 1px solid; border-radius: 0; }
+  .arm.cr { border-right: 1px solid; border-left: 1px solid; border-bottom: none; border-radius: 6px 6px 0 0; }
+  .arm.en { border-left: 1px solid; border-right: 1px solid; border-top: none; border-radius: 0 0 6px 6px; }
 
-  /* Pricing cards: full width, bigger numbers */
-  .p-card { padding: 20px 16px; }
-  .p-num { font-size: 28px; }
-  .p-label { font-size: 11px; }
-  .p-desc { font-size: 12px; }
+  /* ── Bundle / Full Picture ── */
+  .bundle { padding: 24px 16px 28px; }
+  .bundle-title { font-size: 18px; }
+  .bundle-sub { font-size: 13px; }
 
-  /* Form: full width, comfortable padding */
-  .form-wrap { padding: 24px 16px; margin-top: 32px; }
+  /* ── Outcome pillars: stacked ── */
+  .outcomes { grid-template-columns: 1fr; gap: 10px; }
+  .outcome { padding: 14px; }
+  .outcome strong { font-size: 14px; }
+  .outcome span { font-size: 13px; }
+
+  /* ── Pricing cards: stacked full width ── */
+  .pricing-row { grid-template-columns: 1fr; gap: 16px; }
+  .p-card { padding: 22px 18px; width: 100%; box-sizing: border-box; }
+  .p-num { font-size: 32px; }
+  .p-label { font-size: 11px; letter-spacing: 0.14em; }
+  .p-desc { font-size: 13px; }
+  .p-project { font-size: 12px; }
+
+  /* ── Form: full width, finger-friendly ── */
+  .form-wrap { padding: 24px 16px; margin-top: 28px; }
   .form-row { grid-template-columns: 1fr; gap: 0; }
+  .form-group { margin-bottom: 18px; }
+  .form-group label { font-size: 11px; }
   .form-group input[type="text"],
-  .form-group input[type="email"] { font-size: 16px; padding: 13px 14px; }
-  .radio-group { flex-direction: column; gap: 12px; }
-  .submit-btn { font-size: 16px; padding: 16px; }
+  .form-group input[type="email"] { font-size: 16px; padding: 14px; width: 100%; box-sizing: border-box; }
+  .radio-group { flex-direction: column; gap: 14px; }
+  .radio-opt span { font-size: 15px; }
+  .radio-opt input[type="radio"] { width: 18px; height: 18px; }
+  .submit-btn { font-size: 17px; padding: 18px; margin-top: 28px; }
 }
 
 :root{--ink:#020408;--pink:#ff2d78;--cyan:#28c5ef;--green:#4fd24c;--cream:#f2eadc;--border:rgba(255,45,120,0.18);}
