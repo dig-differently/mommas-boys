@@ -84,14 +84,16 @@ body { background: #000; display: flex; justify-content: center; min-height: 100
 .section-wrapper { width: 100%; }
 @media (max-width: 620px) {
 
-  /* ── Page & hero ── */
+  /* ── Page ── */
   .pg { padding: 16px 14px 56px; }
-  .hero-row { flex-direction: column; align-items: flex-start; gap: 16px; margin-bottom: 28px; }
+
+  /* ── Hero: center align ── */
+  .hero-row { flex-direction: column; align-items: center; text-align: center; gap: 16px; margin-bottom: 28px; }
   .logo-stage { width: 120px; height: 120px; }
   .logo-stage img { width: 120px; }
-  .hero-text { padding-left: 0; }
+  .hero-text { padding-left: 0; text-align: center; }
   .big-headline { font-size: clamp(28px, 8vw, 38px); }
-  .hero-sub { font-size: 14px; }
+  .hero-sub { font-size: 14px; max-width: 100%; }
 
   /* ── Lanes: stack Creative then Systems ── */
   .lanes { grid-template-columns: 1fr; gap: 16px; }
@@ -107,11 +109,14 @@ body { background: #000; display: flex; justify-content: center; min-height: 100
   .svc-p { font-size: 13px; }
   .svc-s { font-size: 11px; }
 
-  /* ── Funnel arms ── */
-  .funnel-arms { flex-direction: column; gap: 0; }
-  .arm { width: 100%; height: 36px; border: 1px solid; border-radius: 0; }
-  .arm.cr { border-right: 1px solid; border-left: 1px solid; border-bottom: none; border-radius: 6px 6px 0 0; }
-  .arm.en { border-left: 1px solid; border-right: 1px solid; border-top: none; border-radius: 0 0 6px 6px; }
+  /* ── Funnel arms: side by side, pink left / blue right ── */
+  .funnel-arms { flex-direction: row; gap: 0; }
+  .arm { height: 44px; font-size: 9px; }
+  .arm.cr { border-right: none; border-radius: 6px 0 0 0; border-bottom: none; }
+  .arm.en { border-left: none; border-radius: 0 6px 0 0; border-bottom: none; }
+
+  /* Push bundle down so green tag doesn't overlap ── */
+  .bundle { margin-top: 0; padding-top: 32px; }
 
   /* ── Bundle / Full Picture ── */
   .bundle { padding: 24px 16px 28px; }
@@ -143,10 +148,17 @@ body { background: #000; display: flex; justify-content: center; min-height: 100
   .radio-opt span { font-size: 15px; }
   .radio-opt input[type="radio"] { width: 18px; height: 18px; }
   .submit-btn { font-size: 17px; padding: 18px; margin-top: 28px; }
+
+  /* ── Footer: center everything ── */
+  footer { flex-direction: column; align-items: center; text-align: center; gap: 16px; }
+  .footer-brand { justify-content: center; }
+  .footer-mid { text-align: center; }
+  .footer-right { text-align: center; justify-content: center; }
 }
 
 :root{--ink:#020408;--pink:#ff2d78;--cyan:#28c5ef;--green:#4fd24c;--cream:#f2eadc;--border:rgba(255,45,120,0.18);}
-/* ── INTAKE FORM ── */
+.mobile-br { display: none; }
+@media (max-width: 620px) { .mobile-br { display: block; } }
 .form-wrap { margin-top: 40px; background: #0d0d0d; border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 32px 28px; }
 .form-title { font-family: 'Bebas Neue', cursive; font-size: 22px; letter-spacing: 2px; color: #f0ece3; margin-bottom: 6px; }
 .form-sub { font-size: 12px; color: #777; font-family: 'DM Mono', monospace; letter-spacing: 0.05em; margin-bottom: 28px; }
@@ -237,7 +249,7 @@ footer {
 <div class="hero-text">
 <div class="mb-logo">Momma's Boys — Services Overview</div>
 <div class="big-headline">Build something <em style="font-family:'Bebas Neue',cursive;color:#ff2d78;font-style:normal;text-shadow:0 0 45px rgba(255,45,120,.4),4px 4px 0 rgba(255,45,120,.18);">Momma</em><br>will be proud of.</div>
-<div class="hero-sub">Joe &amp; Sean Leone — Creative Industrial Engineers. We blend engineering precision with brand storytelling to help organizations grow smarter, operate leaner, and stand for something that lasts.</div>
+<div class="hero-sub">Joe &amp; Sean Leone are Creative Industrial Engineers. We blend engineering precision with brand storytelling to help organizations grow smarter, operate leaner, and stand for something that lasts.</div>
 </div></div>
 <div class="divider"></div>
 <div class="section-wrapper"><div style="text-align:center;font-size:12px;color:#f0ece3;margin-bottom:16px;letter-spacing:0.03em;">Check the services that are applicable to your needs</div><div class="lanes">
@@ -266,11 +278,11 @@ footer {
 <div class="svc deselected" data-type="en" data-weight="416" data-project="485" onclick="toggle(this)"><div class="svc-check"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l3 3 5-6" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="svc-n"><strong>Training &amp; Capacity Building</strong>Workshop design, leadership dev</div><div class="svc-p-wrap"><div class="svc-p en">$485/project</div><div class="svc-s en">→ $416/mo retainer</div></div></div>
 </div></div>
 <div class="convergence-label">Where the two lanes meet</div>
-<div class="funnel-arms"><div class="arm cr">Creative Studio ↘</div><div class="arm en">↙ Systems Studio</div></div>
+<div class="funnel-arms"><div class="arm cr">Creative Studio</div><div class="arm en">Systems Studio</div></div>
 <div class="bundle">
 <div class="bundle-tag">The Full Picture</div>
 <div class="bundle-title">Momma's Boys:<br><em>Creative Industrial Engineering</em></div>
-<div class="bundle-sub">When both lanes activate together, they don't just add, they multiply.<br>Your organization gets a living system that tells its story while optimizing how it operates.</div>
+<div class="bundle-sub">When both lanes activate together,<br>they don't just add, they multiply.<br>Your organization gets a living system that tells<br class="mobile-br"> its story while optimizing how it operates.</div>
 <div class="outcomes">
 <div class="outcome"><strong>Organizational Growth</strong><span>A brand that recruits donors, partners, and talent, while your systems scale to absorb the growth.</span></div>
 <div class="outcome"><strong>Internal Efficiency</strong><span>Processes that free your team from busywork so they can do the work that actually matters.</span></div>
