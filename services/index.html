@@ -83,11 +83,37 @@ body { background: #000; display: flex; justify-content: center; min-height: 100
 .footer-tagline { width: 100%; text-align: center; font-size: 11px; color: #aaa; font-style: italic; margin-top: 16px; letter-spacing: 0.06em; }
 .section-wrapper { width: 100%; }
 @media (max-width: 620px) {
-  .pg { padding: 28px 18px 48px; }
+  .pg { padding: 20px 14px 48px; }
   .lanes { grid-template-columns: 1fr; }
   .outcomes { grid-template-columns: 1fr; }
   .pricing-row { grid-template-columns: 1fr; }
   .hero-row { gap: 20px; }
+
+  /* Service rows: stack name + price vertically */
+  .svc { flex-wrap: wrap; gap: 8px; padding: 14px 0; }
+  .svc-n { width: 100%; font-size: 14px; }
+  .svc-n strong { font-size: 14px; }
+  .svc-p-wrap { width: 100%; flex-direction: row; align-items: center; justify-content: flex-start; gap: 10px; }
+  .svc-p { font-size: 13px; }
+  .svc-s { font-size: 11px; }
+
+  /* Lane titles */
+  .lane-title { font-size: 15px; white-space: normal; }
+  .lane { padding: 20px 14px; }
+
+  /* Pricing cards: full width, bigger numbers */
+  .p-card { padding: 20px 16px; }
+  .p-num { font-size: 28px; }
+  .p-label { font-size: 11px; }
+  .p-desc { font-size: 12px; }
+
+  /* Form: full width, comfortable padding */
+  .form-wrap { padding: 24px 16px; margin-top: 32px; }
+  .form-row { grid-template-columns: 1fr; gap: 0; }
+  .form-group input[type="text"],
+  .form-group input[type="email"] { font-size: 16px; padding: 13px 14px; }
+  .radio-group { flex-direction: column; gap: 12px; }
+  .submit-btn { font-size: 16px; padding: 16px; }
 }
 
 :root{--ink:#020408;--pink:#ff2d78;--cyan:#28c5ef;--green:#4fd24c;--cream:#f2eadc;--border:rgba(255,45,120,0.18);}
@@ -110,7 +136,7 @@ body { background: #000; display: flex; justify-content: center; min-height: 100
 .submit-btn { margin-top: 24px; width: 100%; padding: 14px; background: #28c5ef; color: #020408; font-family: 'Nunito', sans-serif; font-size: 15px; font-weight: 800; letter-spacing: 1px; border: none; border-radius: 100px; cursor: pointer; box-shadow: 0 0 28px rgba(40,197,239,.4); transition: box-shadow 0.2s, transform 0.2s; }
 .submit-btn:hover { box-shadow: 0 0 50px rgba(40,197,239,.65); transform: translateY(-2px); }
 .form-success { display: none; text-align: center; padding: 24px; font-family: 'DM Mono', monospace; font-size: 13px; color: #28c5ef; letter-spacing: 0.08em; }
-@media(max-width:600px){ .form-row { grid-template-columns: 1fr; } }
+
 
 .logo-stage{position:relative;display:inline-flex;justify-content:center;align-items:center;flex-shrink:0;width:180px;height:180px;}
 .logo-stage img{width:180px;height:auto;filter:drop-shadow(0 0 55px rgba(40,197,239,.28)) drop-shadow(0 0 90px rgba(255,45,120,.18));animation:float 7s ease-in-out infinite;}
