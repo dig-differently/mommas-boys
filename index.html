@@ -390,6 +390,8 @@ footer {
   .nav-links a:not(.nav-btn){display:none;}
   .hero-right{margin-top:28px;}
 }
+.mobile-br { display:none; }
+@media(max-width:600px){ .mobile-br { display:block; } }
 </style>
 </head>
 <body>
@@ -531,7 +533,7 @@ footer {
     <div class="impact-number">$327K</div>
     <div class="impact-raised">raised across <span>2 organizations</span></div>
     <div class="impact-sub">...and counting. Don't be afraid to ask for help!</div>
-    <div class="impact-sub" style="font-family:'Boogaloo',cursive;color:var(--green);letter-spacing:1.5px;font-size:18px;">The Industrial Involution has begun!</div>
+    <div class="impact-sub" style="font-family:'Boogaloo',cursive;color:var(--green);letter-spacing:1.5px;font-size:18px;">The Industrial Involution<br class="mobile-br"> has begun!</div>
   </div>
 </section>
 
